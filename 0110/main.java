@@ -42,32 +42,25 @@ class Pessoa {
 class Aposentadoria {
     public static void verificar(Pessoa p){
         if (p.sexo.equalsIgnoreCase("M")) {
-            if (p.idade >= 65 && p.tempo >=30) {
-                System.out.println("Pode se aposentar");
-            } else {
-                if (p.idade <= 65 && p.tempo <= 30) {
-                    System.out.println("Você não podera se aposentar pela sua idade e tempo trabalhado faltam "+ (65 - p.idade) + "anos e " + (30 - p.tempo) + " de tempo trabalhado");
-                } else if (p.idade <= 65) {
-                    System.out.println("Você não podera se aposentar pela sua idade faltam "+ (65 - p.idade) + " anos");
-                } else if (p.tempo <= 30) {
-                    System.out.println("Você não podera se aposentar pela seu tempo trabalhado faltam "+ (30 - p.tempo) + " de tempo trabalhado");
+            if (p.idade >= 65) {
+                if (p.tempo >= 30) {
+                  System.out.println("Pode se aposentar");  
+                } else {
+                    System.out.println("Não pode se aposemtar por falta de tempo trabalhado ");
                 }
+            } else {
+                System.out.println("Não pode se aposentar por falta de idade");
             }
         } else if (p.sexo.equalsIgnoreCase("F")){
-            if (p.idade >= 60 && p.tempo >=25) {
-                if (p.idade >= 60 && p.tempo >=25) {
-                System.out.println("Pode se aposentar");
-            } else {
-                if (p.idade <= 60 && p.tempo <= 25) {
-                    System.out.println("Você não podera se aposentar pela sua idade e tempo trabalhado faltam "+ (60 - p.idade) + "anos e " + (25 - p.tempo) + " de tempo trabalhado");
-                } else if (p.idade <= 60) {
-                    System.out.println("Você não podera se aposentar pela sua idade faltam "+ (60 - p.idade) + " anos");
-                } else if (p.tempo <= 25) {
-                    System.out.println("Você não podera se aposentar pela seu tempo trabalhado faltam "+ (25 - p.tempo) + " de tempo trabalhado");
+            if (p.idade >= 65) {
+                if (p.tempo >= 30) {
+                  System.out.println("Pode se aposentar");  
+                } else {
+                    System.out.println("Não pode se aposemtar por falta de tempo trabalhado ");
                 }
+            } else {
+                System.out.println("Não pode se aposentar por falta de idade");
             }
-            }
-        } else {
             System.out.println("Sexo nao reconhecido");
         }
     }
